@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solyne Investments – Bespoke Tailoring & Alterations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --plum: #3C2060;
+    --plum-mid: #5A2D9C;
+    --plum-light: #7B4DBF;
+    --plum-pale: #C8ADEA;
+    --plum-ghost: #F3EEFF;
+    --cream: #FDFAF6;
+    --white: #ffffff;
+    --text-dark: #1A0F2E;
+    --text-mid: #4A3060;
+    --thread-gold: #C4A46B;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5vw;
+    background: rgba(253,250,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--plum-pale);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--plum);
+    letter-spacing: 0.04em;
+  }
+  .nav-logo span { color: var(--thread-gold); font-style: italic; }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; }
+  nav ul a {
+    text-decoration: none; font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-mid); transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--plum-mid); }
+  .nav-cta {
+    background: var(--plum); color: var(--white) !important;
+    padding: 0.55rem 1.4rem; border-radius: 30px; transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--plum-mid) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 8vw;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--thread-gold); font-weight: 500; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: inline-block; width: 36px; height: 1px;
+    background: var(--thread-gold);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--plum);
+    margin-bottom: 1.8rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--plum-mid); }
+  .hero-desc {
+    font-size: 1rem; color: var(--text-mid); line-height: 1.8;
+    max-width: 420px; margin-bottom: 2.5rem; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+  .btn-primary {
+    background: var(--plum); color: var(--white);
+    padding: 1rem 2.2rem; border-radius: 40px;
+    font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--plum-mid); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--plum); font-size: 0.85rem; letter-spacing: 0.06em;
+    text-decoration: none; display: flex; align-items: center; gap: 0.5rem;
+    font-weight: 400; transition: gap 0.2s;
+  }
+  .btn-ghost:hover { gap: 0.8rem; }
+  .btn-ghost::after { content: '→'; }
+
+  .hero-right {
+    background: var(--plum);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.12;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .hero-visual {
+    position: relative; z-index: 2;
+    text-align: center;
+  }
+  .needle-art {
+    width: 280px; height: 380px;
+    position: relative;
+  }
+  /* SVG thread illustration */
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(255,255,255,0.5); font-size: 0.8rem;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-top: 2rem;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--plum);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+  }
+  .stat {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: var(--white);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--thread-gold); }
+  .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--plum-pale); margin-top: 0.5rem;
+  }
+
+  /* SECTION GENERAL */
+  section { padding: 7rem 8vw; }
+  .section-tag {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--thread-gold); font-weight: 500; margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300;
+    color: var(--plum); line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--plum-mid); }
+  .section-sub {
+    font-size: 0.95rem; color: var(--text-mid);
+    line-height: 1.85; max-width: 560px; font-weight: 300;
+  }
+
+  /* SERVICES */
+  #services { background: var(--white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px; margin-top: 4rem;
+    background: var(--plum-pale);
+    border: 1.5px solid var(--plum-pale);
+  }
+  .service-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    transition: background 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--plum-mid);
+    transition: height 0.3s;
+  }
+  .service-card:hover { background: var(--plum-ghost); }
+  .service-card:hover::before { height: 100%; }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--plum-ghost);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .service-icon svg { width: 24px; height: 24px; stroke: var(--plum-mid); fill: none; stroke-width: 1.5; }
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--plum);
+    margin-bottom: 0.8rem;
+  }
+  .service-card p {
+    font-size: 0.9rem; color: var(--text-mid);
+    line-height: 1.75; font-weight: 300;
+  }
+
+  /* ABOUT */
+  #about {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+    padding: 7rem 8vw;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-box {
+    background: var(--plum-ghost);
+    border: 1.5px solid var(--plum-pale);
+    border-radius: 4px;
+    height: 480px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .about-img-box svg { width: 200px; opacity: 0.3; }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    width: 140px; height: 140px;
+    background: var(--plum);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .about-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; color: var(--white); font-weight: 300; line-height: 1;
+  }
+  .about-badge-text {
+    font-size: 0.65rem; color: var(--plum-pale);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem;
+    padding: 0 1rem; text-align: center;
+  }
+  .about-list { margin-top: 2rem; }
+  .about-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem 0; border-bottom: 1px solid var(--plum-ghost);
+  }
+  .about-item:last-child { border-bottom: none; }
+  .about-bullet {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--thread-gold); margin-top: 0.4rem; flex-shrink: 0;
+  }
+  .about-item p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+
+  /* PROCESS */
+  #process { background: var(--plum); }
+  #process .section-title { color: var(--white); }
+  #process .section-tag { color: var(--thread-gold); }
+  #process .section-sub { color: var(--plum-pale); max-width: 500px; }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute; top: 36px; left: 12.5%; right: 12.5%;
+    height: 1px; background: var(--plum-light); z-index: 0;
+  }
+  .step {
+    text-align: center; padding: 0 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .step-num {
+    width: 72px; height: 72px; border-radius: 50%;
+    border: 1.5px solid var(--plum-light);
+    background: var(--plum);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; color: var(--thread-gold); font-weight: 300;
+  }
+  .step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; color: var(--white); margin-bottom: 0.6rem;
+  }
+  .step p { font-size: 0.85rem; color: var(--plum-pale); line-height: 1.7; font-weight: 300; }
+
+  /* GALLERY */
+  #gallery { background: var(--cream); }
+  .gallery-intro { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 260px 180px;
+    gap: 12px;
+  }
+  .gallery-item {
+    border-radius: 4px; overflow: hidden;
+    background: var(--plum-ghost);
+    border: 1.5px solid var(--plum-pale);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .gallery-item:hover { transform: scale(1.015); }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; background: var(--plum-ghost); }
+  .gallery-item:nth-child(2) { background: #EDE4F8; }
+  .gallery-item:nth-child(3) { background: #F3EEFF; }
+  .gallery-item:nth-child(4) { grid-column: span 2; background: #E8DFF7; }
+  .gallery-item:nth-child(5) { background: #F7F3FF; }
+  .gallery-item:nth-child(6) { background: #EDE4F8; }
+  .gallery-label {
+    position: absolute; bottom: 1rem; left: 1rem;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--plum); font-weight: 500;
+  }
+  .gallery-icon { opacity: 0.2; }
+  .gallery-icon svg { width: 60px; height: 60px; stroke: var(--plum); fill: none; stroke-width: 1; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--white); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .testimonial {
+    background: var(--plum-ghost);
+    border: 1.5px solid var(--plum-pale);
+    border-radius: 4px; padding: 2.5rem 2rem;
+    position: relative;
+  }
+  .testimonial::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; color: var(--plum-pale);
+    position: absolute; top: 0.5rem; left: 1.2rem;
+    line-height: 1;
+  }
+  .testimonial blockquote {
+    font-size: 0.95rem; color: var(--text-mid);
+    line-height: 1.8; font-weight: 300; font-style: italic;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--plum); display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: var(--white); font-weight: 600;
+  }
+  .author-name { font-size: 0.85rem; font-weight: 500; color: var(--plum); }
+  .author-title { font-size: 0.78rem; color: var(--text-mid); }
+  .stars { color: var(--thread-gold); font-size: 0.85rem; margin-bottom: 0.2rem; }
+
+  /* CONTACT */
+  #contact {
+    background: var(--plum);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+    padding: 7rem 8vw;
+  }
+  #contact .section-title { color: var(--white); }
+  #contact .section-tag { color: var(--thread-gold); }
+  #contact .section-sub { color: var(--plum-pale); }
+  .contact-details { margin-top: 2.5rem; }
+  .contact-row {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--plum-light);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .contact-icon svg { width: 18px; height: 18px; stroke: var(--plum-pale); fill: none; stroke-width: 1.5; }
+  .contact-row-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plum-pale); margin-bottom: 0.25rem; }
+  .contact-row-val { font-size: 0.95rem; color: var(--white); font-weight: 300; }
+
+  .contact-form {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px; padding: 3rem;
+  }
+  .contact-form h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; color: var(--white); margin-bottom: 2rem; font-weight: 300;
+  }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label {
+    display: block; font-size: 0.75rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--plum-pale); margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px; padding: 0.85rem 1rem;
+    font-family: 'Jost', sans-serif; font-size: 0.9rem;
+    color: var(--white); outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--thread-gold); }
+  .form-group select { cursor: pointer; }
+  .form-group select option { background: var(--plum); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-submit {
+    width: 100%; margin-top: 0.5rem;
+    background: var(--thread-gold); color: var(--plum);
+    border: none; border-radius: 40px;
+    padding: 1rem; cursor: pointer;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark);
+    padding: 3.5rem 8vw 2rem;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand .nav-logo { font-size: 1.6rem; display: block; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.75; font-weight: 300; }
+  .footer-col h5 {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--thread-gold); margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.6rem; }
+  .footer-col a {
+    text-decoration: none; font-size: 0.88rem;
+    color: rgba(255,255,255,0.5); transition: color 0.2s; font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem; font-size: 0.78rem; color: rgba(255,255,255,0.3);
+  }
+
+  /* THREAD DECORATION */
+  .thread-line {
+    width: 60px; height: 2px;
+    background: linear-gradient(to right, var(--thread-gold), transparent);
+    margin: 1.5rem 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.7s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 300px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    #services section, .services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    #about { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .process-steps::before { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    #contact { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Solyne <span>Investments</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Bespoke Tailoring &amp; Alterations</div>
+    <h1>Where <em>fabric</em><br>meets<br>artistry</h1>
+    <p class="hero-desc">Solyne Investments brings your vision to life through precision stitching, expert alterations, and custom-made garments crafted with passion and care.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-pattern"></div>
+    <div class="hero-visual">
+      <svg width="280" height="360" viewBox="0 0 280 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Thread spool -->
+        <ellipse cx="140" cy="80" rx="60" ry="20" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+        <rect x="80" y="80" width="120" height="130" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+        <ellipse cx="140" cy="210" rx="60" ry="20" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+        <!-- Thread lines on spool -->
+        <line x1="95" y1="90" x2="95" y2="200" stroke="rgba(196,164,107,0.5)" stroke-width="1"/>
+        <line x1="108" y1="88" x2="108" y2="202" stroke="rgba(196,164,107,0.6)" stroke-width="1"/>
+        <line x1="121" y1="87" x2="121" y2="203" stroke="rgba(196,164,107,0.7)" stroke-width="1"/>
+        <line x1="134" y1="86" x2="134" y2="204" stroke="rgba(196,164,107,0.8)" stroke-width="1.5"/>
+        <line x1="147" y1="86" x2="147" y2="204" stroke="rgba(196,164,107,0.7)" stroke-width="1"/>
+        <line x1="160" y1="87" x2="160" y2="203" stroke="rgba(196,164,107,0.6)" stroke-width="1"/>
+        <line x1="173" y1="88" x2="173" y2="202" stroke="rgba(196,164,107,0.5)" stroke-width="1"/>
+        <!-- Needle -->
+        <line x1="140" y1="210" x2="200" y2="320" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="200" cy="321" rx="6" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(-30 200 321)"/>
+        <!-- Thread from needle -->
+        <path d="M200 320 Q230 280 220 250 Q210 230 200 240 Q190 250 210 270" stroke="rgba(196,164,107,0.7)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+        <!-- Scissors hint -->
+        <circle cx="60" cy="290" r="16" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="rgba(255,255,255,0.05)"/>
+        <line x1="53" y1="283" x2="67" y2="297" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="67" y1="283" x2="53" y2="297" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Decorative circles -->
+        <circle cx="220" cy="50" r="4" fill="rgba(196,164,107,0.4)"/>
+        <circle cx="50" cy="150" r="3" fill="rgba(255,255,255,0.2)"/>
+        <circle cx="240" cy="180" r="5" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      </svg>
+      <div class="hero-tagline">Crafted with love &amp; precision</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">500<span>+</span></div>
+    <div class="stat-label">Happy Clients</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">8<span>+</span></div>
+    <div class="stat-label">Years of Experience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">12<span>k</span></div>
+    <div class="stat-label">Garments Created</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100<span>%</span></div>
+    <div class="stat-label">Bespoke &amp; Handcrafted</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services">
+<section style="padding: 7rem 8vw;">
+  <div class="section-tag">What We Offer</div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+    <h2 class="section-title">Our <em>Tailoring</em> Services</h2>
+    <p class="section-sub" style="margin-bottom:0;">Every stitch is placed with intention. We bring expert craftsmanship to every garment, every time.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Custom Dressmaking</h3>
+      <p>From bridal gowns to evening wear, we create one-of-a-kind pieces tailored precisely to your measurements and style vision.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Alterations &amp; Repairs</h3>
+      <p>Breathe new life into beloved garments. We resize, re-hem, re-line, and restore clothing to perfect fit and condition.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <h3>School Uniforms</h3>
+      <p>Durable, well-fitted school wear made to withstand daily wear. Bulk orders welcome with consistent quality guaranteed.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3>Corporate Wear</h3>
+      <p>Uniforms and professional attire that represent your brand with elegance. Custom embroidery and branding available.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Bridal &amp; Occasion</h3>
+      <p>Your special day deserves perfection. We specialise in wedding gowns, bridesmaids' dresses, and occasion wear.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <h3>Fashion Design</h3>
+      <p>Collaborate with our designer to develop your own fashion line or capsule collection from concept to finished garment.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual">
+    <div class="about-img-box">
+      <svg class="gallery-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:160px;height:160px;opacity:0.25;">
+        <!-- Sewing machine outline -->
+        <rect x="10" y="50" width="100" height="50" rx="8" stroke="#5A2D9C" stroke-width="2" fill="none"/>
+        <rect x="20" y="30" width="60" height="25" rx="4" stroke="#5A2D9C" stroke-width="2" fill="none"/>
+        <circle cx="90" cy="65" r="12" stroke="#5A2D9C" stroke-width="2" fill="none"/>
+        <circle cx="90" cy="65" r="5" stroke="#5A2D9C" stroke-width="2" fill="none"/>
+        <line x1="45" y1="55" x2="45" y2="100" stroke="#C4A46B" stroke-width="2"/>
+        <line x1="30" y1="80" x2="75" y2="80" stroke="#5A2D9C" stroke-width="1.5"/>
+      </svg>
+      <div class="about-badge">
+        <div class="about-badge-num">8+</div>
+        <div class="about-badge-text">Years of Craft</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section-tag">Our Story</div>
+    <h2 class="section-title">Passion for<br><em>perfect fit</em></h2>
+    <div class="thread-line"></div>
+    <p class="section-sub">Solyne Investments was founded on the belief that every person deserves clothing that fits beautifully and reflects their unique identity. We combine traditional tailoring techniques with modern design sensibility.</p>
+    <div class="about-list">
+      <div class="about-item">
+        <div class="about-bullet"></div>
+        <p>Expert seamstresses with over 8 years of combined tailoring experience in both local and international fashion.</p>
+      </div>
+      <div class="about-item">
+        <div class="about-bullet"></div>
+        <p>Only premium-grade fabrics sourced from trusted local and international suppliers for every project.</p>
+      </div>
+      <div class="about-item">
+        <div class="about-bullet"></div>
+        <p>Every garment receives meticulous attention — from initial measurements to final fitting and delivery.</p>
+      </div>
+      <div class="about-item">
+        <div class="about-bullet"></div>
+        <p>We serve individuals, families, schools, corporations, and events with equal dedication and care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-tag">How It Works</div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+    <h2 class="section-title">Our Simple<br><em>4-Step Process</em></h2>
+    <p class="section-sub">From your first enquiry to wearing your finished garment — we make the journey seamless.</p>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Consultation</h4>
+      <p>We discuss your needs, style preferences, fabric choices, and budget to plan the perfect garment.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Measurements</h4>
+      <p>Precise body measurements are taken to ensure an impeccable fit unique to you.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Creation</h4>
+      <p>Our skilled tailors cut, sew, and craft your garment with expert precision and care.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Final Fitting</h4>
+      <p>You try on the finished piece, and we make any final adjustments until it's absolutely perfect.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-intro">
+    <div>
+      <div class="section-tag">Our Work</div>
+      <h2 class="section-title">A glimpse of<br><em>our craft</em></h2>
+    </div>
+    <a href="#contact" class="btn-ghost" style="color:var(--plum); text-decoration:none; display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; letter-spacing:0.06em;">View All Work</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-icon">
+        <svg viewBox="0 0 80 80"><path d="M20 60 L40 15 L60 60 Z" stroke="#5A2D9C" stroke-width="1.5" fill="none"/><line x1="28" y1="45" x2="52" y2="45" stroke="#5A2D9C" stroke-width="1.5"/></svg>
+      </div>
+      <span class="gallery-label">Bridal Collection</span>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-icon">
+        <svg viewBox="0 0 80 80"><rect x="25" y="15" width="30" height="50" rx="3" stroke="#5A2D9C" stroke-width="1.5" fill="none"/><line x1="25" y1="35" x2="55" y2="35" stroke="#5A2D9C" stroke-width="1"/></svg>
+      </div>
+      <span class="gallery-label">Corporate Wear</span>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-icon">
+        <svg viewBox="0 0 80 80"><circle cx="40" cy="30" r="12" stroke="#5A2D9C" stroke-width="1.5" fill="none"/><path d="M20 70 Q20 50 40 50 Q60 50 60 70" stroke="#5A2D9C" stroke-width="1.5" fill="none"/></svg>
+      </div>
+      <span class="gallery-label">Custom Designs</span>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-icon">
+        <svg viewBox="0 0 80 80"><path d="M15 40 Q15 15 40 15 Q65 15 65 40 Q65 65 40 65 Q15 65 15 40" stroke="#5A2D9C" stroke-width="1.5" fill="none"/><path d="M25 40 Q25 25 40 25 Q55 25 55 40" stroke="#C4A46B" stroke-width="1" fill="none"/></svg>
+      </div>
+      <span class="gallery-label">Evening Wear</span>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-icon">
+        <svg viewBox="0 0 80 80"><rect x="20" y="20" width="40" height="40" stroke="#5A2D9C" stroke-width="1.5" fill="none" rx="2"/><line x1="30" y1="30" x2="50" y2="30" stroke="#C4A46B" stroke-width="1"/><line x1="30" y1="38" x2="50" y2="38" stroke="#C4A46B" stroke-width="1"/><line x1="30" y1="46" x2="43" y2="46" stroke="#C4A46B" stroke-width="1"/></svg>
+      </div>
+      <span class="gallery-label">School Uniforms</span>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-icon">
+        <svg viewBox="0 0 80 80"><path d="M30 20 Q20 20 20 35 L20 60 L60 60 L60 35 Q60 20 50 20 L40 30 Z" stroke="#5A2D9C" stroke-width="1.5" fill="none"/></svg>
+      </div>
+      <span class="gallery-label">Alterations</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-tag">Client Love</div>
+  <h2 class="section-title">What our clients <em>say</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <blockquote>Solyne made my wedding dress and I was absolutely blown away. The fit was perfect and the attention to detail was extraordinary. I felt like a queen on my big day!</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">AM</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Amina Mwangi</div>
+          <div class="author-title">Bride, Nairobi</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <blockquote>We ordered school uniforms for 120 students. The quality and consistency were remarkable. Every piece was perfect. We are now loyal customers and recommend Solyne to every school.</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">JK</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">James Kariuki</div>
+          <div class="author-title">Head Teacher, Westlands Academy</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <blockquote>The alteration work on my vintage suit was done beautifully. They understood what I wanted and delivered beyond expectations. Truly skilled professionals.</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">SN</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Sharon Njeri</div>
+          <div class="author-title">Fashion Enthusiast, Nairobi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">Let's create<br>something <em>beautiful</em><br>together</h2>
+    <p class="section-sub">Whether it's a custom garment, alterations, or corporate wear — we're here to bring your vision to life.</p>
+    <div class="contact-details">
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-row-label">Visit Us</div>
+          <div class="contact-row-val">Nairobi, Kenya</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12 19.79 19.79 0 0 1 1.4 3.34a2 2 0 0 1 1.5-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9a16 16 0 0 0 6 6l1-1.06a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-row-label">Call or WhatsApp</div>
+          <div class="contact-row-val">+254 700 000 000</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-row-label">Email Us</div>
+          <div class="contact-row-val">info@solyneInvestments.co.ke</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="contact-row-label">Working Hours</div>
+          <div class="contact-row-val">Mon – Sat: 8:00 AM – 6:00 PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form">
+    <h3>Book a Consultation</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Jane">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Doe">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Phone / WhatsApp</label>
+      <input type="tel" placeholder="+254 700 000 000">
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="jane@example.com">
+    </div>
+    <div class="form-group">
+      <label>Service Required</label>
+      <select>
+        <option value="">Select a service…</option>
+        <option>Custom Dressmaking</option>
+        <option>Alterations &amp; Repairs</option>
+        <option>School Uniforms</option>
+        <option>Corporate Wear</option>
+        <option>Bridal &amp; Occasion</option>
+        <option>Fashion Design</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Tell us about your project</label>
+      <textarea placeholder="Describe your garment, event date, style ideas, fabric preferences…"></textarea>
+    </div>
+    <button class="btn-submit">Send Enquiry →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="nav-logo" style="color:#fff;">Solyne <span>Investments</span></span>
+      <p>Crafting beautiful garments and fitting perfect dreams — one stitch at a time. Nairobi's trusted tailoring and alterations specialist.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Custom Dressmaking</a></li>
+        <li><a href="#services">Alterations</a></li>
+        <li><a href="#services">School Uniforms</a></li>
+        <li><a href="#services">Corporate Wear</a></li>
+        <li><a href="#services">Bridal Wear</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#gallery">Portfolio</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Nairobi, Kenya</a></li>
+        <li><a href="#">+254 700 000 000</a></li>
+        <li><a href="#">info@solyneInvestments.co.ke</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Solyne Investments. All rights reserved.</span>
+    <span>Crafted with ♥ in Nairobi</span>
+  </div>
+</footer>
+
+<script>
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--plum-mid)' : '';
+    });
+  });
+
+  // Form submit
+  document.querySelector('.btn-submit').addEventListener('click', function() {
+    this.textContent = 'Message Sent! ✓';
+    this.style.background = '#5A7C4A';
+    this.style.color = '#fff';
+    setTimeout(() => {
+      this.textContent = 'Send Enquiry →';
+      this.style.background = '';
+      this.style.color = '';
+    }, 3000);
+  });
+</script>
+</body>
+</html>
