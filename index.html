@@ -45,6 +45,8 @@
     letter-spacing: 0.04em;
   }
   .nav-logo span { color: var(--thread-gold); font-style: italic; }
+  .nav-brand { display:flex; align-items:center; gap:0.8rem; }
+  .nav-brand img { margin:0; display:block; width:56px; height:56px; }
   nav ul { list-style: none; display: flex; gap: 2.5rem; }
   nav ul a {
     text-decoration: none; font-size: 0.82rem; font-weight: 500;
@@ -176,9 +178,9 @@
     line-height: 1.85; max-width: 560px; font-weight: 300;
   }
 
-  /* SERVICES */
-  #services { background: var(--white); }
-  .services-grid {
+  /* Products */
+  #Products { background: var(--white); }
+  .Products-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 1.5px; margin-top: 4rem;
     background: var(--plum-pale);
@@ -488,8 +490,8 @@
     .hero-right { min-height: 300px; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); }
     .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
-    #services section, .services-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
+    #Products section, .Products-grid { grid-template-columns: 1fr; }
+    .Products-grid { grid-template-columns: 1fr; }
     #about { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: repeat(2, 1fr); }
     .process-steps::before { display: none; }
@@ -507,9 +509,13 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Solyne <span>Investments</span></div>
+  <div class="nav-brand">
+    <img src="./images/solyne.png" alt="Solyne Investments Logo">
+    <div class="nav-logo">Solyne <span>Investments</span></div>
+  </div>
+
   <ul>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#Products">Products</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#testimonials">Reviews</a></li>
@@ -525,7 +531,7 @@
     <p class="hero-desc">Solyne Investments brings your vision to life through precision stitching, expert alterations, and custom-made garments crafted with passion and care.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Book a Consultation</a>
-      <a href="#services" class="btn-ghost">Our Services</a>
+      <a href="#Products" class="btn-ghost">Our Products</a>
     </div>
   </div>
   <div class="hero-right">
@@ -583,55 +589,69 @@
   </div>
 </div>
 
-<!-- SERVICES -->
-<div id="services">
+<!-- Products -->
+<div id="Products">
 <section style="padding: 7rem 8vw;">
   <div class="section-tag">What We Offer</div>
   <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
-    <h2 class="section-title">Our <em>Tailoring</em> Services</h2>
+    <h2 class="section-title">Our <em>Tailoring</em> Products</h2>
     <p class="section-sub" style="margin-bottom:0;">Every stitch is placed with intention. We bring expert craftsmanship to every garment, every time.</p>
   </div>
-  <div class="services-grid">
+  <div class="Products-grid">
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
       </div>
-      <h3>Custom Dressmaking</h3>
+      <h3>Sweaters</h3>
       <p>From bridal gowns to evening wear, we create one-of-a-kind pieces tailored precisely to your measurements and style vision.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
       </div>
-      <h3>Alterations &amp; Repairs</h3>
+      <h3>Track Suits</h3>
       <p>Breathe new life into beloved garments. We resize, re-hem, re-line, and restore clothing to perfect fit and condition.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
       </div>
-      <h3>School Uniforms</h3>
+      <h3>Trousers</h3>
       <p>Durable, well-fitted school wear made to withstand daily wear. Bulk orders welcome with consistent quality guaranteed.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </div>
-      <h3>Corporate Wear</h3>
+      <h3>Dresses</h3>
       <p>Uniforms and professional attire that represent your brand with elegance. Custom embroidery and branding available.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h3>Bridal &amp; Occasion</h3>
+      <h3>Shirts</h3>
       <p>Your special day deserves perfection. We specialise in wedding gowns, bridesmaids' dresses, and occasion wear.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
       </div>
-      <h3>Fashion Design</h3>
+      <h3>Shorts</h3>
+      <p>Collaborate with our designer to develop your own fashion line or capsule collection from concept to finished garment.</p>
+    </div>
+     <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <h3>T-Shirts</h3>
+      <p>Collaborate with our designer to develop your own fashion line or capsule collection from concept to finished garment.</p>
+    </div>
+     <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <h3>Accessories</h3>
       <p>Collaborate with our designer to develop your own fashion line or capsule collection from concept to finished garment.</p>
     </div>
   </div>
@@ -786,7 +806,7 @@
         <div>
           <div class="stars">★★★★★</div>
           <div class="author-name">James Kariuki</div>
-          <div class="author-title">Head Teacher, Westlands Academy</div>
+          <div class="author-title">Head Teacher, St Peters Elite School</div>
         </div>
       </div>
     </div>
@@ -826,7 +846,7 @@
         </div>
         <div>
           <div class="contact-row-label">Call or WhatsApp</div>
-          <div class="contact-row-val">+254 700 000 000</div>
+          <div class="contact-row-val">+254 716580733 / 0100503915</div>
         </div>
       </div>
       <div class="contact-row">
@@ -835,7 +855,7 @@
         </div>
         <div>
           <div class="contact-row-label">Email Us</div>
-          <div class="contact-row-val">info@solyneInvestments.co.ke</div>
+          <div class="contact-row-val">investmentssolyne@gmail.com</div>
         </div>
       </div>
       <div class="contact-row">
@@ -844,7 +864,7 @@
         </div>
         <div>
           <div class="contact-row-label">Working Hours</div>
-          <div class="contact-row-val">Mon – Sat: 8:00 AM – 6:00 PM</div>
+          <div class="contact-row-val">Mon – Fri: 8:00 AM – 5:00 PM</div>
         </div>
       </div>
     </div>
@@ -863,22 +883,20 @@
     </div>
     <div class="form-group">
       <label>Phone / WhatsApp</label>
-      <input type="tel" placeholder="+254 700 000 000">
+      <input type="tel" placeholder="+254 716 580 733 / 0100 503 915">
     </div>
     <div class="form-group">
       <label>Email Address</label>
-      <input type="email" placeholder="jane@example.com">
+      <input type="email" placeholder="investmentssolyne@gmail.com">
     </div>
     <div class="form-group">
       <label>Service Required</label>
       <select>
         <option value="">Select a service…</option>
-        <option>Custom Dressmaking</option>
+     
         <option>Alterations &amp; Repairs</option>
         <option>School Uniforms</option>
-        <option>Corporate Wear</option>
-        <option>Bridal &amp; Occasion</option>
-        <option>Fashion Design</option>
+       
         <option>Other</option>
       </select>
     </div>
@@ -898,13 +916,13 @@
       <p>Crafting beautiful garments and fitting perfect dreams — one stitch at a time. Nairobi's trusted tailoring and alterations specialist.</p>
     </div>
     <div class="footer-col">
-      <h5>Services</h5>
+      <h5>Products</h5>
       <ul>
-        <li><a href="#services">Custom Dressmaking</a></li>
-        <li><a href="#services">Alterations</a></li>
-        <li><a href="#services">School Uniforms</a></li>
-        <li><a href="#services">Corporate Wear</a></li>
-        <li><a href="#services">Bridal Wear</a></li>
+       
+  
+        <li><a href="#Products">School Uniforms</a></li>
+              <li><a href="#Products">Alterations</a></li>
+    
       </ul>
     </div>
     <div class="footer-col">
@@ -920,8 +938,8 @@
       <h5>Contact</h5>
       <ul>
         <li><a href="#">Nairobi, Kenya</a></li>
-        <li><a href="#">+254 700 000 000</a></li>
-        <li><a href="#">info@solyneInvestments.co.ke</a></li>
+        <li><a href="#">+254 716 580 733</a></li>
+        <li><a href="#">investmentssolyne@gmail.com</a></li>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Facebook</a></li>
       </ul>
@@ -929,7 +947,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 Solyne Investments. All rights reserved.</span>
-    <span>Crafted with ♥ in Nairobi</span>
+    <!-- <span>Crafted with ♥ in Nairobi</span> -->
   </div>
 </footer>
 
